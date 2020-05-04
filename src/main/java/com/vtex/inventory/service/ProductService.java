@@ -20,9 +20,9 @@ public class ProductService {
     private ProductRepository repository;
 
     public static final String ACCOUNT_SID =
-            "ACCOUNT_SID_TWILIO";
+            "AC93e5314365b9ed7546dbca31c612c827";
     public static final String AUTH_TOKEN =
-            "AUTH_TOKEN_TWILIO";
+            "2a7402aa7927a35d75c1251928eb189d";
 
     public ResponseEntity<?> insertProduct(ProductDTO productDTO){
         Product product = new Product(productDTO);
@@ -77,8 +77,8 @@ public class ProductService {
                 Twilio.init(ACCOUNT_SID, AUTH_TOKEN);
 
                 Message message = Message
-                        .creator(new PhoneNumber("Number_to"), // to
-                                new PhoneNumber("Number_from"), // from
+                        .creator(new PhoneNumber("+5563992448654"), // to
+                                new PhoneNumber("+12057518821"), // from
                                 "Atenção!!! A quantidade em estoque do produto " + product.getName() + " está abaixo da mínima cadastrada. Lembre-se de de comprar mais para não perder vendas :)")
                         .create();
             }
