@@ -16,11 +16,21 @@ public class ProductDTO {
     private Long id;
     private String name;
     private String code;
+    private String nomeFornecedor;
+    private Double peso;
+    private Double preco;
+    private Integer emEstoque;
+    private Integer minEstoque;
 
     public ProductDTO(Product product){
         this.id = product.getId();
         this.name = product.getName();
         this.code = product.getCode();
+        this.nomeFornecedor = product.getNomeFornecedor();
+        this.peso = product.getPeso();
+        this.preco = product.getPreco();
+        this.emEstoque = product.getEmEstoque();
+        this.minEstoque = product.getMinEstoque();
     }
 
     public ProductDTO(){}
