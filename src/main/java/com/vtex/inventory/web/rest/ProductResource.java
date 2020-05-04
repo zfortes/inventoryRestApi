@@ -26,4 +26,22 @@ public class ProductResource {
     public ResponseEntity<?> getAllProducts(){
         return productService.getAllProducts();
     }
+
+    @PutMapping("/edit/{id}")
+    public ResponseEntity<?> updateInventory(@PathVariable  Long id, @RequestBody ProductDTO  productDTO){
+        return productService.updateInventory(id, productDTO);
+    }
+
+    @PutMapping("/sale/{id}/{qtd}")
+    public ResponseEntity<?> saleProduct(@PathVariable  Long id, @PathVariable  Integer qtd){
+        if(qtd == null){
+            qtd = 1;
+        }
+        return productService.saleProduct(id, qtd);
+    }
+
+    @DeleteMapping("/{id}")
+    public ResponseEntity<?> deleteProductById(@PathVariable  Long id){
+        return productService.deleteProductById(id);
+    }
 }
